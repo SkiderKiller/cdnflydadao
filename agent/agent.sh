@@ -80,7 +80,7 @@ check_sys(){
     fi
 }
 
-# 安装依赖
+# 安装依赖1
 install_depend() {
     if check_sys sysRelease ubuntu;then
         apt-get update
