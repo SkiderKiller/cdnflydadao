@@ -84,7 +84,7 @@ check_sys(){
 install_depend() {
     if check_sys sysRelease ubuntu;then
         apt-get update
-        apt-get -y install wget python-minimal
+        apt-get -y install wget python2-minimal
     elif check_sys sysRelease centos;then
         yum install -y wget python
     fi    
@@ -132,7 +132,7 @@ if sys_ver.startswith("centos-6"):
     sys_ver = "centos-6"
 print sys_ver
 EOF
-echo `python /tmp/sys_ver.py`
+echo `python2 /tmp/sys_ver.py`
 }
 
 sync_time(){
@@ -163,7 +163,7 @@ sync_time(){
 }
 
 need_sys() {
-    SYS_VER=`python -c "import platform;import re;sys_ver = platform.platform();sys_ver = re.sub(r'.*-with-(.*)-.*','\g<1>',sys_ver);print sys_ver;"`
+    SYS_VER=`python2 -c "import platform;import re;sys_ver = platform.platform();sys_ver = re.sub(r'.*-with-(.*)-.*','\g<1>',sys_ver);print sys_ver;"`
     if [[ $SYS_VER =~ "Ubuntu-16.04" ]];then
       echo "$sys_ver"
     elif [[ $SYS_VER =~ "centos-7" ]]; then
