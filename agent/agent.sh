@@ -164,7 +164,7 @@ sync_time(){
 
 need_sys() {
     SYS_VER=`python2 -c "import platform;import re;sys_ver = platform.platform();sys_ver = re.sub(r'.*-with-(.*)-.*','\g<1>',sys_ver);print sys_ver;"`
-    if [[ $SYS_VER =~ "Ubuntu-16.04" ]];then
+    if [[ $SYS_VER =~ "Ubuntu-20.04" ]];then
       echo "$sys_ver"
     elif [[ $SYS_VER =~ "centos-7" ]]; then
       SYS_VER="centos-7"
