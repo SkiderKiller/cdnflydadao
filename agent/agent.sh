@@ -84,7 +84,7 @@ check_sys(){
 install_depend() {
     if check_sys sysRelease ubuntu;then
         apt-get update
-        apt-get -y install wget python-minimal
+        apt-get -y install wget python2-minimal
     elif check_sys sysRelease centos;then
         yum install -y wget python
     fi    
